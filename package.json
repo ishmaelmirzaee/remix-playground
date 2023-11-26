@@ -4,10 +4,14 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "lint": "eslint ./app",
     "build": "remix build",
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky install",
+    "prettier": "npx prettier -w ./src",
+    "precommit": "npm run lint && npm run prettier"
   },
   "dependencies": {
     "@remix-run/css-bundle": "^2.3.1",
@@ -24,9 +28,16 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.0",
     "typescript": "^5.3.2"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   }
 }
