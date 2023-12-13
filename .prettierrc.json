@@ -1,5 +1,5 @@
-module.exports = {
-   "arrowParens": "avoid",
+{
+  "arrowParens": "avoid",
   "bracketSameLine": false,
   "bracketSpacing": false,
   "embeddedLanguageFormatting": "auto",
@@ -11,12 +11,14 @@ module.exports = {
   "proseWrap": "always",
   "quoteProps": "as-needed",
   "requirePragma": false,
-  "semi": false,
+  "semi": true,
   "singleAttributePerLine": false,
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "plugins": ["prettier-plugin-tailwindcss"],
-   "tailwindConfig": `${__dirname}/tailwind.config.js`
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ]
 }
